@@ -15,11 +15,21 @@ int checkThree(int k){
 }
 
 int main(){
+    cin.tie(0)->sync_with_stdio(0);
     int t,k;
     cin>>t;
 
+    int goodNums[1001];
+
+    for(int i=1, k=1; k<=1000; i++){
+        if(i%3!=0 && i%10!=3){
+            goodNums[k-1] = i;
+            k++;
+        }
+    }
+
     while(t--){
-        cin>>k;
-        cout<<checkThree(k)<<nl;
+        cin >> k;
+        cout << goodNums[k-1] << nl;
     }
 }
